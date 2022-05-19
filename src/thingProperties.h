@@ -4,9 +4,9 @@
 
 const char DEVICE_LOGIN_NAME[] = "fe0a0eba-26a3-4578-bb2c-ce807b544ef7";
 
-const char SSID[] = "TP-Link-VR";    // Network SSID (name)
-const char PASS[] = "Tewarit10";    // Network password (use for WPA, or use as key for WEP)
-const char DEVICE_KEY[] = "X4ABWQMB3UF9J83LZYUQ";    // Secret device password
+const char SSID[]               = SECRET_SSID;    // Network SSID (name)
+const char PASS[]               = SECRET_PASS;    // Network password (use for WPA, or use as key for WEP)
+const char DEVICE_KEY[]  = SECRET_DEVICE_KEY;    // Secret device password
 
 void onTriggerLevelChange();
 
