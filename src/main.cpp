@@ -36,8 +36,8 @@
 #include <Wire.h>
 
 // Define DHT22 Parameters
-#define DHTPIN D2
-#define DHTTYPE DHT11
+#define DHTPIN D8
+#define DHTTYPE DHT22
 DHT dht(DHTPIN, DHTTYPE);
 
 // Define variables for Temperature and Humidity
@@ -47,11 +47,10 @@ float hum;
 // Sensor constants - replace with values from calibration sketch
 
 // Constant for dry sensor
-const int DryValue = 0;
-
+const int DryValue = 865;
+ 
 // Constant for wet sensor
-// const int WetValue = 1800;
-const int WetValue = 300;
+const int WetValue = 480;
 
 // Variables for soil moisture
 int soilMoistureValue;
@@ -61,7 +60,7 @@ int soilMoisturePercent;
 #define SENSOR_IN A0
 
 // Relay Port
-#define RELAY_OUT D1
+#define RELAY_OUT D3
 
 // Pump Status Text
 String pump_status_text = "OFF";
@@ -150,7 +149,7 @@ void loop() {
   soilMoisturePercent = constrain(soilMoisturePercent, 0, 100);
 
   // Print raw value to serial monitor for sensor calibration
-  // Serial.println(soilMoistureValue);
+  Serial.println(soilMoistureValue);
 
   // Pass soil moisture to cloud variable
   current_Moisture = soilMoisturePercent;
